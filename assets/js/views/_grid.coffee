@@ -3,6 +3,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     template: templates.grid_layout
     regions:
       'homes': '.homes'
+      'energyTrends': '.energy-trends'
 
     initialize: ->
       @homeList = new App.Collections.Homes([])
@@ -11,3 +12,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     onShow: ->
       @homes.show new Views.HomeGrid({collection: @homeList})
+      @energyTrends.show new Views.EnergyTrends
