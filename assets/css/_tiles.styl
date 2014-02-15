@@ -7,6 +7,7 @@
   transition: all 200ms ease-in
   transform-style: preserve-3d
   transform: translate3d(0, 0, 0)
+  position: relative
   &:hover
     transform: translate3d(0, -6px, 0)
     cursor: pointer
@@ -17,6 +18,17 @@
 
 .inner-tile-wrap
   padding: spacing-block-tiny spacing-block-tiny 0 spacing-block-tiny
+
+.home-details
+  color: #FFF
+  font-size: 11px
+  position: absolute
+  top: 20px
+  left: 20px
+  z-index: 10
+
+  .bed
+    margin-top: 2px
 
 .home-photo
   overflow: hidden
