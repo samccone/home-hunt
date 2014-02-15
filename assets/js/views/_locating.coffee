@@ -15,7 +15,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
           zip   = r[0].address_components[7].short_name
           state = r[0].address_components[5].short_name
 
-          App.reqres.setHandler 'zip', -> 02906
+          App.reqres.setHandler 'zip', -> "02906"
           App.reqres.setHandler 'state', -> "RI"
 
           App.AppRegion.show new App.Views.Grid
