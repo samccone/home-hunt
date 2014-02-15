@@ -10,6 +10,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @homeList.reset d.map.properties
 
     onShow: ->
-      @homes.show(
-        new Views.HomeGrid({collection @homeList})
-      )
+      @homes.show new Views.HomeGrid({collection: @homeList})
