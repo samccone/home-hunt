@@ -3,7 +3,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     getItemView: -> Views.HomeGridItem
 
     addItemView: (model) ->
-      super if model.hasImage()
+      super if model.shouldShow()
 
     onDomRefresh: ->
       @$('.lazy').show().lazyload()

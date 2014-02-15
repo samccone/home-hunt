@@ -9,8 +9,8 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
     getSqFt: ->
       @attributes[7][3]
 
-    hasImage: ->
-      @attributes[7][5]?
+    shouldShow: ->
+      @attributes[7][5]? and @getSqFt()?
 
     getImage: ->
       @attributes[7][5].replace('p_a', 'p_d')
