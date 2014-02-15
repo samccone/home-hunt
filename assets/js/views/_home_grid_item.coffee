@@ -4,6 +4,3 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     templateHelpers: ->
       homeImage: @model.getImage()
       homePrice: @model.getCost()
-
-    onDomRefresh: ->
-      @$('.lazy').show().lazyload()

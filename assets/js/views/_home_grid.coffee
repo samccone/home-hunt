@@ -4,3 +4,6 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     addItemView: (model) ->
       super if model.hasImage()
+
+    onDomRefresh: ->
+      @$('.lazy').show().lazyload()
