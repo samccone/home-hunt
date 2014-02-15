@@ -1,3 +1,17 @@
-h3 a home
-img.lazy(data-original=homeImage)
-p.price= homePrice
+.inner-tile-wrap
+    .home-photo-wrap
+      .overlay
+      .home-photo.lazy(data-original=homeImage)
+    .monthly-summary
+      .green-button-drop
+        p Drag Green Button data for monthly estimate
+      .post-drop
+  .bottom-meta-info
+  .home-meta-col
+    h4 
+      span.inline-icon.home-icon
+      span.price= homePrice
+  .home-meta-col
+    h4
+      span.inline-icon.sq-ft-icon
+      | 1246 sq ft.
