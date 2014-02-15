@@ -1,6 +1,6 @@
 App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
   marginBottom    = 22
-  height          = 300 + marginBottom
+  height          = 400 + marginBottom
   width           = 600
   leftRightMargin = 10
   diameter        = 2
@@ -10,7 +10,6 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
       @chart = d3.select('.chart')
                 .attr('width', width)
                 .attr 'height', height
-
       @y = d3.scale.linear()
             .domain([0, d3.max(_.flatten(@data))])
             .range([height-marginBottom, 0])
@@ -31,7 +30,9 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
     drawAxis: ->
       xAxis = d3.svg.axis()
               .scale(@x)
-              .orient "bottom"
+              .orient("bottom")
+              .tickFormat (d, i) ->
+                1969 + ~~(44 * i/8)
 
       @chart.append('g')
            .attr('transform', -> "translate(0, #{height - marginBottom})")
