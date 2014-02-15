@@ -1,6 +1,7 @@
 #=require _application
 #=require _router
 #=require _controllers
+#=require_tree views
 
 App.on 'initialize:after', ->
   App.addRegions

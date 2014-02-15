@@ -16,4 +16,4 @@ layouts:
 # variables or (coffeescript) functions.
 locals: {}
 # Precompiled template path, see http://roots.cx/docs/#precompile
-# templates: 'views/templates'
+templates: 'assets/js/templates'
