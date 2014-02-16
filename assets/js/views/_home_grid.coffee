@@ -11,7 +11,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @elBuffer.appendChild $(templates.energy_fact())[0]
         @elBuffer.appendChild $(templates.family_size({size: parseFloat(@familySize)}))[0]
 
-      if index is 12
+      if index is 8
         @elBuffer.appendChild $(templates.old_homes({percent: @homesBuildBefore1900}))[0]
 
       if model.shouldShow()
