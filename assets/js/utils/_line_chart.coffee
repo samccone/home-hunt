@@ -3,7 +3,7 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
   height          = 400 + marginBottom
   width           = 600
   leftRightMargin = 10
-  diameter        = 2
+  diameter        = 4
 
   class Utils.LineChart
     constructor: (@data) ->

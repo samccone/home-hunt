@@ -1,6 +1,23 @@
-svg.chart(viewBox="0 0 600 422")
-ul.toggle-chart
-  li(data-id="NG.N3010RI3.A") NG.N3010RI3.A
-  li(data-id="SEDS.WDRCD.RI.A") SEDS.WDRCD.RI.A
-  li(data-id="SEDS.ESRCD.RI.A") SEDS.ESRCD.RI.A
-  li(data-id="SEDS.DFRCD.RI.A") SEDS.DFRCD.RI.A
+.tile.full
+  .inner-tile-wrap
+    svg.chart(viewBox="0 0 600 422")
+    ul.toggle-chart
+      li(data-id="NG.N3010RI3.A") 
+        img(src="../images/chart/coal-active@2x.png" width="30" height="30" alt="Coal")
+        .cl
+        span.energy-type coal
+
+      li(data-id="SEDS.WDRCD.RI.A")
+        img(src="../images/chart/gas-active@2x.png" width="30" height="28" alt="Coal")
+        .cl
+        span.energy-type gas
+
+      li(data-id="SEDS.ESRCD.RI.A")
+        img(src="../images/chart/oil-active@2x.png" width="20" height="30" alt="Coal")
+        .cl
+        span.energy-type oil
+
+      li(data-id="SEDS.DFRCD.RI.A")
+        img(src="../images/chart/wood-active@2x.png" width="30" height="30" alt="Coal")
+        .cl
+        span.energy-type wood
