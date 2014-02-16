@@ -10,12 +10,13 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
       @chart = d3.select('.chart')
                 .attr('width', width)
                 .attr 'height', height
+
       @y = d3.scale.linear()
-            .domain([0, d3.max(_.flatten(@data))])
+            .domain([0, d3.max(_.flatten(_.map(@data, (d) -> d.data)))])
             .range([height-marginBottom, 0])
 
       @x = d3.scale.linear()
-            .domain([0, @data[0].length])
+            .domain([0, @data[0].data.length])
             .range([leftRightMargin, width-leftRightMargin])
 
       @line = d3.svg.line()
@@ -39,30 +40,31 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
            .call xAxis
 
     drawLine: (d, i, initial) ->
-      empty= d.map -> 0
+      empty= d.data.map -> 0
+
       if initial
         @chart.append("svg:path").attr("d", @line(empty))
-                              .attr('class', "line#{i}")
+                              .attr('class', "line#{i} id-#{d.id}")
                               .transition().duration(500)
-                              .attr("d", @line(d))
+                              .attr("d", @line(d.data))
       else
         @chart.selectAll("circle.line#{i}")
            .attr('cy', height-marginBottom)
 
         @chart.select("path.line#{i}").attr("d", @line(empty))
                               .transition().duration(500)
-                              .attr("d", @line(d))
+                              .attr("d", @line(d.data))
 
       @chart.selectAll("circle.line#{i}")
            .data(empty).enter()
            .append('circle')
-           .attr('class', "line#{i}")
+           .attr('class', "line#{i} id-#{d.id}")
            .attr('cx', @line.x())
            .attr('cy', @line.y())
            .attr('r', diameter)
 
       @chart.selectAll("circle.line#{i}")
-           .data(d)
+           .data(d.data)
            .transition().duration(500)
            .attr('cx', @line.x())
            .attr('cy', @line.y())

@@ -6,11 +6,13 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     toggleChartLine: (e) ->
       $t = $(e.currentTarget)
-      index = @chartData.indexOf(_.findWhere(@chartData,
-        id: $t.data('id')
-      ))
+      index = null
 
-      $(".line#{index}").toggle()
+      _.each @chartData, (d, i) ->
+        if ~d.id.indexOf($t.data('id'))
+          index = i
+
+      $("[class*='#{$t.data('id')}']").toggle()
       @chart.redrawLine(index)
       $t.toggleClass 'disabled'
 
@@ -18,9 +20,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       App.Utils.API.getTrends().then (d) =>
         r = _.map(d, (v) ->
           id: v.series[0].series_id
-          data: _.map(v.series[0].data, (vv) -> parseFloat(vv[1]))
+          data: _.map(v.series[0].data, (vv) -> parseFloat(vv[1])).reverse()
         )
 
         @chartData = r
-        @chart = new App.Utils.LineChart(r.map (v) -> v.data.reverse())
+        @chart = new App.Utils.LineChart(r)
 
