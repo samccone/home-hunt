@@ -8,6 +8,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @elBuffer.appendChild $(templates.commute_time({time: @commuteTime}))[0]
 
       if index is 7
+        @elBuffer.appendChild $(templates.energy_fact())[0]
         @elBuffer.appendChild $(templates.family_size({size: parseFloat(@familySize)}))[0]
 
       if index is 12
