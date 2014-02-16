@@ -1,7 +1,7 @@
 App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
   marginBottom    = 22
   height          = 400 + marginBottom
-  width           = 600
+  width           = 750
   leftRightMargin = 10
   diameter        = 4
 
