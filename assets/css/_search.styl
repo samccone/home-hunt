@@ -7,8 +7,13 @@
 .find-homes
   margin-left: 12px
   display: inline-block
-  top: -2px;
-  position: relative;
+  top: -2px
+  position: relative
+  @media screen and (max-width: 400px)
+    margin: spacing-block-tiny 0 0 0
+    padding: 10px
+    width: 100%
+    display: block
 
 .search-input
   border: none
