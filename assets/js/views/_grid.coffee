@@ -18,8 +18,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @familySize = tables[5].values[0].nation[0].value[0]
         @homesBuildBefore1900 = d[0]['Demographics:demographics'].response[0].pages[0].page[1].tables[0].table[1].data[0].attribute[0].value[0]["_"]
 
-        console.log @commuteTime, @familySize, @homesBuildBefore1900
-
+        @homes.currentView.setDemographics(@commuteTime, @familySize, @homesBuildBefore1900)
         @homeList.reset homes[0].map.properties
 
     onShow: ->
