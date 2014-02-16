@@ -9,6 +9,7 @@
 App.on 'initialize:after', ->
   App.addRegions
     'AppRegion': '#app'
+    'LoadingRegion' : '#loading'
 
   App.Router = new Router(controller: new Controller)
   Backbone.history.start(pushState: true)

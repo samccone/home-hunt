@@ -1,3 +1,3 @@
 class window.Controller extends Marionette.Controller
   home: ->
-    App.AppRegion.show new App.Views.Locating
+    App.LoadingRegion.show new App.Views.Locating

@@ -17,5 +17,5 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
           App.reqres.setHandler 'zip', -> "02906"
           App.reqres.setHandler 'state', -> "RI"
-
+          App.LoadingRegion.reset()
           App.AppRegion.show new App.Views.Grid
