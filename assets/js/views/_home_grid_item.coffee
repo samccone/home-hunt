@@ -3,8 +3,30 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     template: templates.home_grid_item
     className: 'tile third home'
     serializeData: ->
-      homeSqFt: @model.getSqFt()
-      homeBath: @model.getBath()
-      homeBed: @model.getBed()
-      homeImage: @model.getImage()
-      homePrice: @model.getCost()
+      _.extend @model.attributes,
+        homeSqFt: @model.getSqFt()
+        homeBath: @model.getBath()
+        homeBed: @model.getBed()
+        homeImage: @model.getImage()
+        homePrice: @model.getCost()
+
+    modelEvents: ->
+      "change:energyCost": ->
+        @render()
+        @$('.lazy').lazyload()
+
+    onShow: ->
+      @$('input').on 'change', (e) =>
+        f = new FileReader()
+
+        f.onload = (e) =>
+          r = $.xml2json(e.target.result).feed.entry.slice(4)
+          length = r.length - 1
+
+          avgCost = _(r).map((v) ->
+            parseInt(v.content.IntervalBlock?.IntervalReading.cost, 10)
+          ).compact().reduce((m, v) -> m+=v).valueOf()
+
+          @model.set 'energyCost', (""+~~(avgCost/length)).slice(0,3)
+
+        f.readAsText(arguments[0].originalEvent.target.files[0])

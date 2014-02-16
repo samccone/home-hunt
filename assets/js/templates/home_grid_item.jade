@@ -6,8 +6,12 @@
       .overlay
       .home-photo.lazy(data-original=homeImage)
     .monthly-summary
-      .green-button-drop
-        p Drag Green Button data for monthly estimate
+      - if (energyCost)
+        .green-button-cost $#{energyCost}
+      - else
+        .green-button-drop
+          p Drag Green Button data for monthly estimate
+          input(type="file")
       .post-drop
   .bottom-meta-info
   .home-meta-col
