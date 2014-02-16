@@ -7,12 +7,14 @@
       .home-photo.lazy(data-original=homeImage)
     .monthly-summary
       - if (energyCost)
-        .green-button-cost $#{energyCost}
+        .green-button-cost
+          h5 electrical bill
+          .energy-cost
+            $#{energyCost} a month
       - else
         .green-button-drop
           p Drag Green Button data for monthly estimate
           input(type="file")
-      .post-drop
   .bottom-meta-info
   .home-meta-col
     h4
