@@ -27,7 +27,7 @@ h4
   font-family 'robotoregular'
 
 .btn
-  padding: 6px 12px
+  padding: 8px 12px
   text-align: center
   font-size: 12px
   text-transform: uppercase
@@ -35,6 +35,9 @@ h4
 
 .btn-wire
   border: 1px solid slate;
+  transition: all 100ms ease-in
+  &:hover
+    border-color: darken(slate, 20%)
 
 .contain
   width: page-width
