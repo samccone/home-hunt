@@ -1,5 +1,6 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.HomeGrid extends Marionette.CollectionView
+    tagName: 'ul'
     getItemView: -> Views.HomeGridItem
 
     addItemView: (model) ->
