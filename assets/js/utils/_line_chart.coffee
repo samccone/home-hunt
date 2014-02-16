@@ -1,5 +1,6 @@
 App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
   marginBottom    = 22
+  marginTop       = 22
   height          = 400 + marginBottom
   width           = 750
   leftRightMargin = 10
@@ -13,7 +14,7 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
 
       @y = d3.scale.linear()
             .domain([0, d3.max(_.flatten(_.map(@data, (d) -> d.data)))])
-            .range([height-marginBottom, 0])
+            .range([height-marginBottom, marginTop])
 
       @x = d3.scale.linear()
             .domain([0, @data[0].data.length])
