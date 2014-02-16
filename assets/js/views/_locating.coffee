@@ -6,16 +6,16 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @getLocation()
 
     getLocation: ->
-      navigator.geolocation.getCurrentPosition  (p) ->
-        geocoder = new google.maps.Geocoder()
-        latlng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude)
+      # navigator.geolocation.getCurrentPosition  (p) ->
+      #   geocoder = new google.maps.Geocoder()
+      #   latlng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude)
 
 
-        geocoder.geocode {'latLng': latlng}, (r) ->
-          zip   = r[0].address_components[7].short_name
-          state = r[0].address_components[5].short_name
+      #   geocoder.geocode {'latLng': latlng}, (r) ->
+      # zip   = r[0].address_components[7]?.short_name
+      # state = r[0].address_components[5]?.short_name
 
-          App.reqres.setHandler 'zip', -> "02906"
-          App.reqres.setHandler 'state', -> "RI"
+      App.reqres.setHandler 'zip', -> "02906"
+      App.reqres.setHandler 'state', -> "RI"
 
-          App.AppRegion.show new App.Views.Grid
+      App.AppRegion.show new App.Views.Grid
