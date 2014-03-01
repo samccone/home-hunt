@@ -4,7 +4,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     className: 'tile third home'
     tagName: 'li'
     serializeData: ->
-      _.extend @model.attributes,
+      _.extend {}, @model.attributes,
         homeSqFt: @model.getSqFt()
         homeBath: @model.getBath()
         homeBed: @model.getBed()
