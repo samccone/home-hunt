@@ -17,3 +17,6 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
 
     getCost: ->
       @attributes[3]
+
+    getZillowId: ->
+      @attributes[0]
