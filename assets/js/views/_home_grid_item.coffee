@@ -3,6 +3,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     template: templates.home_grid_item
     className: 'tile third home'
     tagName: 'li'
+    events: ->
+      "click": @getDetails
+
     serializeData: ->
       _.extend {}, @model.attributes,
         homeSqFt: @model.getSqFt()
@@ -15,6 +18,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       "change:energyCost": ->
         @render()
         @$('.lazy').lazyload()
+
+    getDetails: ->
+      App.execute 'showDetails', {zid: @model.getZillowId()}
 
     onShow: ->
       @$('input').on 'change', (e) =>

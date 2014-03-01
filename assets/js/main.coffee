@@ -15,4 +15,7 @@ App.on 'initialize:after', ->
   App.Router = new Router(controller: new Controller)
   Backbone.history.start(pushState: true)
 
+  App.commands.setHandler 'showDetails', (d) ->
+    App.OverlayRegion.show new App.Views.HomeDetail
+
 $ -> App.start()
