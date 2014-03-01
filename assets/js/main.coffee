@@ -11,6 +11,7 @@ App.on 'initialize:after', ->
     'AppRegion': '#app'
     'LoadingRegion' : '#loading'
 
+  App.reqres.setHandler 'maxHomes', -> 20
   App.Router = new Router(controller: new Controller)
   Backbone.history.start(pushState: true)
 

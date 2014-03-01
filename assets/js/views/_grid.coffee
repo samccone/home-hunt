@@ -19,7 +19,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @homesBuildBefore1900 = d[0]['Demographics:demographics'].response[0].pages[0].page[1].tables[0].table[1].data[0].attribute[0].value[0]["_"]
 
         @homes.currentView.setDemographics(@commuteTime, @familySize, @homesBuildBefore1900)
-        @homeList.reset homes[0].map.properties
+        @homeList.reset homes[0].map.properties.slice(0, App.request('maxHomes'))
 
     onShow: ->
       @homes.show new Views.HomeGrid({collection: @homeList})
