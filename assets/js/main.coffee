@@ -16,6 +16,8 @@ App.on 'initialize:after', ->
   Backbone.history.start(pushState: true)
 
   App.commands.setHandler 'showDetails', (d) ->
-    App.OverlayRegion.show new App.Views.HomeDetail
+    d.fetch()
+    d.once 'sync', ->
+      App.OverlayRegion.show new App.Views.HomeDetail(model: d)
 
 $ -> App.start()

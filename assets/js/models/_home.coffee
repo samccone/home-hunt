@@ -1,5 +1,11 @@
 App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
   class Models.Home extends Backbone.Model
+    url: -> "#{App.Utils.API.homeUrlRoot()}#{@getZillowId()}"
+
+    parse: (d) ->
+      if d['SearchResults:searchresults']?
+        @set 'details', d['SearchResults:searchresults']['response'][0]['results'][0]['result'][0]
+
     getBed: ->
       @attributes[7][1]
 

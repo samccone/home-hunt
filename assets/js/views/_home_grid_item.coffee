@@ -20,7 +20,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @$('.lazy').lazyload()
 
     getDetails: ->
-      App.execute 'showDetails', {zid: @model.getZillowId()}
+      App.execute 'showDetails', @model
 
     onShow: ->
       @$('input').on 'change', (e) =>

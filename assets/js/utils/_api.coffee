@@ -1,6 +1,7 @@
 App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
   base = "http://house-hunt-api.nodejitsu.com/"
   Utils.API =
+    homeUrlRoot: -> "#{base}details/"
     getHomes: ->
       $.getJSON("#{base}homes/#{App.request('zip')}?callback=?")
 
