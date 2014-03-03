@@ -1,5 +1,6 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.EnergyTrends extends Marionette.ItemView
+    className: 'energy-trends tile full'
     template: templates.energy_trends
     events: ->
       'click li': @toggleChartLine

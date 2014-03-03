@@ -7,11 +7,15 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       if index is 3
         @elBuffer.appendChild $(templates.commute_time({time: @commuteTime}))[0]
 
-      if index is 7
+      if index is 5
+        @energyTrends = new Views.EnergyTrends
+        @elBuffer.appendChild @energyTrends.render().el
+
+      if index is 12
         @elBuffer.appendChild $(templates.energy_fact())[0]
         @elBuffer.appendChild $(templates.family_size({size: parseFloat(@familySize)}))[0]
 
-      if index is 8
+      if index is 15
         @elBuffer.appendChild $(templates.old_homes({percent: @homesBuildBefore1900}))[0]
 
       if model.shouldShow()
@@ -21,3 +25,5 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     onDomRefresh: ->
       @$('.lazy').show().lazyload()
+      @energyTrends?.triggerMethod('show')
+
