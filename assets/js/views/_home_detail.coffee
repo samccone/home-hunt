@@ -12,14 +12,6 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       details: @model.get('details')
 
     onDomRefresh: ->
-      a = @model.get('details')['address']
-
-      map = L.mapbox.map(@ui.map[0], 'snowcast.hdnkboal')
-        .setView([a['latitude'], a['longitude']], 6)
-
-      map.dragging.disable()
-      map.touchZoom.disable()
-      map.doubleClickZoom.disable()
-      map.scrollWheelZoom.disable()
-      # disable tap handler, if present.
-      map.tap.disable() if map.tap?
+      # style here http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html
+      a = @model.get('details')['address'][0]
+      @ui.map.attr 'src', "http://maps.googleapis.com/maps/api/staticmap?center=#{a.latitude[0]},#{a.longitude[0]}&zoom=15&size=650x150&scale=2&maptype=roadmap&sensor=false&style=hue:0x0091ff|visibility:on|weight:0.1"
