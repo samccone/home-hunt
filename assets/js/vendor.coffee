@@ -8,5 +8,4 @@
 #=require 'vendor/_moment.js'
 #=require 'vendor/_lazyload.js'
 #=require 'vendor/_d3.js'
-#=require 'vendor/_mapbox.js'
 #=require 'vendor/_xml2json.js'
