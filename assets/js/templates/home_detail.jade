@@ -1,8 +1,9 @@
 .home-detail-headline
   .close close
-  h4
+  h5
     | home details & <br> energy score tool
 
   - if (details)
-    p.address= details.address[0].street
+    h1.address.roboto-thin= details.address[0].street
+    .home-location
     pre= JSON.stringify(details, null, 4)
