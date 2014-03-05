@@ -12,6 +12,10 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
                 .attr('width', width)
                 .attr 'height', height
 
+      @data = _.map @data, (v) ->
+        v.data = _.where(v.data, (d) -> !_.isNaN(d))
+        v
+
       @y = d3.scale.linear()
             .domain([0, d3.max(_.flatten(_.map(@data, (d) -> d.data)))])
             .range([height-marginBottom, marginTop])
@@ -24,7 +28,6 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
              .interpolate("monotone")
              .x((d, i) => @x(i))
              .y @y
-
 
       @data.forEach (_d, i, initial = true) => @drawLine.apply(@, arguments)
 
