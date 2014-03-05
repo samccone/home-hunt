@@ -3,8 +3,11 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
     url: -> "#{App.Utils.API.homeUrlRoot()}#{@getZillowId()}"
 
     parse: (d) ->
-      if d['SearchResults:searchresults']?
-        @set 'details', d['SearchResults:searchresults']['response'][0]['results'][0]['result'][0]
+      if zillowLabel = d.address.indexOf('is For Sale - Zillow')
+        @set 'details',
+          address: d.address.substring(0, zillowLabel)
+      else
+        @set 'details', d
 
     getBed: ->
       @attributes[7][1]
