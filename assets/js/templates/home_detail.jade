@@ -1,9 +1,14 @@
 .home-detail-headline
   .close close
-  h5
-    | home details & <br> energy score tool
+  .contain
+    h5.home-detail-subhead
+      | home details & <br> energy score tool
+
+    - if (details)
+      h1.address.roboto-thin= details.address[0].street
 
   - if (details)
-    h1.address.roboto-thin= details.address[0].street
-    img.home-location
-    pre= JSON.stringify(details, null, 4)
+    .home-location
+    .home-details
+      .contain
+        pre= JSON.stringify(details, null, 4)
