@@ -4,6 +4,7 @@
 html
   -webkit-font-smoothing: antialiased
   font-family: 'robotoregular'
+  color slate
 
 body
   background-color: light-grey
@@ -13,14 +14,20 @@ a
   text-decoration: none
   &:hover
     color darken(blue, 20%)
-h1, h2, h3
-  color: darken(slate, 40%)
+
+label
+  font-family: 'robotobold';
+
+h1, h2, h3, h4, h5, h6
+  color: darken(slate, 20%)
 
 h1
-  font-size: large-font-size
-
+  font-size large-font-size
+  @media screen and (max-width: 500px)
+    font-size (large-font-size / 1.5)
 h2
   font-size: headline-font-size
+  text-transform uppercase
 
 h3
   font-size: (headline-font-size / 1.5)
@@ -38,6 +45,11 @@ h5
   margin-bottom: 2px
   text-transform: uppercase
 
+h6
+  font-size 14px
+  text-transform uppercase
+  margin-bottom 6px
+
 .btn
   padding: 8px 12px
   text-align: center
@@ -45,12 +57,26 @@ h5
   text-transform: uppercase
   color: slate
   font-family: 'robotoregular'
+  border-radius 3px
 
 .btn-wire
   border: 1px solid slate;
   transition: all 100ms ease-in
   &:hover
     border-color: darken(slate, 20%)
+
+.btn-primary
+  background-color blue
+  border 1px solid darken(blue, 15%)
+  text-transform uppercase
+  padding 16px 0
+  color white
+  &:hover
+    background-color lighten(blue, 5%)
+    border-color blue
+    color white
+  &:active
+    background-color darken(blue, 10%)
 
 .contain
   width: page-width
@@ -59,6 +85,11 @@ h5
     width: 70%
   @media screen and (max-width: 768px)
     width: 94%
+
+.small-contain
+  width 70%
+  @media screen and (max-width: 500px)
+    width: 92%
 
 .inline-block
   display: inline-block
