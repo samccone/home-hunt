@@ -10,6 +10,7 @@ App.on 'initialize:after', ->
   App.addRegions
     'AppRegion': '#app'
     'OverlayRegion' : '.app-overlay'
+    'SearchRegion': '.search-container'
 
   App.reqres.setHandler 'maxHomes', -> 20
   App.Router = new Router(controller: new Controller)
