@@ -25,4 +25,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       location  = encodeURIComponent(@model.get('details')['address'])
       marker    = "&markers=color:blue%7C#{location}"
       @ui.map.css
-        'background-image': "url(http://maps.googleapis.com/maps/api/staticmap?center=#{location}&zoom=15&size=650x150&scale=2&maptype=roadmap&sensor=false&style=hue:0x0091ff|visibility:on|weight:0.1#{marker})"
+        'background-image': "url(http://maps.googleapis.com/maps/api/staticmap?center=#{location}&zoom=11&size=700x120&scale=2&maptype=roadmap&sensor=false&style=hue:0x0091ff|visibility:on|weight:0.1#{marker})"
