@@ -117,5 +117,65 @@
 
         .dotted-divider
         .cl
-        .detail-footer
-          p.small Important Note: These are initial estimates only, and results may vary. If the owner has not already done so, we strongly recommend that they retain a professional energy auditor to develop a detailed work scope and budget for improving the home. We also recommend the Home Performance with ENERGY STAR program when considering home improvements.
+
+        // Start the results here. Move in to template -------------------------------------------------
+        // -----------------------------------------------------------------------------------------
+        h1.score-results.roboto-thin
+          | You could save&nbsp;
+          span.blue $1,846
+          |  a year.
+
+        table.price-breakdown
+          thead
+            tr
+              th category
+              th existing home
+              th with upgrades
+              th savings
+          tbody
+            tr
+              td
+                .small-block.fill-red
+                | heating
+              td $3,020
+              td $3,020
+              td.red $784
+            tr
+              td
+                .small-block.fill-blue
+                | cooling
+              td $3,020
+              td $3,020
+              td.blue $1,245
+            tr
+              td
+                .small-block.fill-dark-slate
+                | hot water
+              td $3,020
+              td $3,020
+              td.dark-slate $135
+            tr
+              td
+                .small-block.fill-pink
+                | small appliances
+              td $3,020
+              td $3,020
+              td.pink $124
+            tr
+              td
+                .small-block.fill-orange
+                | large appliances
+              td $3,020
+              td $3,020
+              td.orange $422
+            tr
+              td
+                .small-block.fill-green
+                | lighting
+              td $3,020
+              td $3,020
+              td.green $101
+
+
+      .detail-footer
+        p.small Important Note: These are initial estimates only, and results may vary. If the owner has not already done so, we strongly recommend that they retain a professional energy auditor to develop a detailed work scope and budget for improving the home. We also recommend the Home Performance with ENERGY STAR program when considering home improvements.
