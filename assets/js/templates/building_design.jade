@@ -1,19 +1,26 @@
 h6 building design
 .home-score-col.third
   label stories above ground
-  select.fancy-select
-    option(selected=selected) Yes
-    option No
+  select#stories(name='storiesAboveGround').fancy-select
+    option(value='1', selected='') 1
+      option(value='2') 2
+      option(value='3') 3
+      option(value='4') 4
+
 .home-score-col.third
   label heated or cooled floor area
-  select.fancy-select
+  select(name="floorArea").fancy-select
     option(selected=selected) Yes
     option No
 .home-score-col.third.is-last
   label type of foundation
-  select.fancy-select
-    option(selected=selected) Yes
-    option No
+  select.fancy-select#found_type(name='foundationType')
+    option(value='slab') Slab-on-grade Foundation
+      option(value='uncond_base', selected='') Unconditioned Basement
+      option(value='cond_base') Conditioned Basement
+      option(value='unvent_crawl') Unvented Crawlspace
+      option(value='vent_crawl') Vented Crawlspace
+
 .cl
 
 .home-score-col.third.is-row
@@ -24,33 +31,60 @@ h6 building design
 
 .home-score-col.third.is-row
   label ceiling insulation level
-  select.fancy-select
-    option(selected=selected) Yes
-    option No
+  select(name='ceilingConstruction').fancy-select
+    option(value='ecwf00') R-0 (no insulation)
+      option(value='ecwf03') R-3 (1-2 inches)
+      option(value='ecwf06') R-6 (2-3 inches)
+      option(value='ecwf09') R-9 (3-4 inches)
+      option(value='ecwf11', selected='') R-11 (4-6 inches)
+      option(value='ecwf19') R-19 (7-9 inches)
+      option(value='ecwf21') R-21 (9-10 inches)
+      option(value='ecwf25') R-25 (10-12 inches)
+      option(value='ecwf30') R-30 (12-15 inches)
+      option(value='ecwf38') R-38 (15-16 inches)
+      option(value='ecwf49') R-49 (16-24 inches)
+      option(value='ecwf60') R-60 (24-30 inches)
+
 
 .home-score-col.third.is-row.is-last
   label roof insluation level
-  select.fancy-select
-    option(selected=selected) Yes
-    option No
+select#roofConstruction(name='roofConstruction').fancy-select
+    option(value='rfwf00co', selected='') R-0
+      option(value='rfwf11co') R-11
+      option(value='rfwf13co') R-13
+      option(value='rfwf15co') R-15
+      option(value='rfwf19co') R-19
+      option(value='rfwf21co') R-21
+      option(value='rfwf27tg') R-27
+      option(value='rfrb00co') R-0, With Radiant Barrier
+      option(value='rfps00co') R-0, With EPS Sheathing
+      option(value='rfps11co') R-11, With EPS Sheathing
+      option(value='rfps13co') R-13, With EPS Sheathing
+      option(value='rfps15co') R-15, With EPS Sheathing
+      option(value='rfps19tg') R-19, With EPS Sheathing
+      option(value='rfps21tg') R-21, With EPS Sheathing
+
 
 .cl
 
 .home-score-col.third.is-row
   label attic or ceiling type
-  select.fancy-select
-    option(selected=selected) Yes
-    option No
+  select#attic_type(name='atticType').fancy-select
+    option(value='uncond_attic', selected='') Unconditioned Attic
+      option(value='cond_attic') Conditioned Attic
+      option(value='cath_ceil') Cathedral Ceiling
+
 
 .home-score-col.third.is-row
   label wall insulation
-  select.fancy-select
-    option(selected=selected) Yes
-    option No
+  select#wall_cons(name='wallConstructionFront').fancy-select
+    option(value='ewwf03wo', selected='') No/Don't Know
+      option(value='ewwf11wo') Yes
+
 
 .home-score-col.third.is-row.is-last
   label weather stripping/caulking
-  select.fancy-select
+  select(name="wallConstructionFront").fancy-select
     option(selected=selected) Yes
     option No
 
