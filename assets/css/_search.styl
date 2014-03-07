@@ -1,11 +1,11 @@
 .search
-  background-color: #FFF
+  background-color: dark-slate
   padding: spacing-block-tiny*2 0
   margin-bottom: spacing-block-tiny*2
-  box-shadow 0 1px 2px rgba(225,231,234,.75)
 
 .search-location-header
   text-transform capitalize
+  color white
 
 .find-homes
   margin-left: 12px
@@ -19,19 +19,22 @@
     display: block
 
 .search-input
+  width 16%
+  background-color transparent
   border: none
   font-size: 20px
   font-family: 'robotolight'
   color: blue
   margin-right: .5%
   padding-bottom: 2px
-  border-bottom: 1px solid #FFF
   margin-left: spacing-block-tiny - 4
   cursor: pointer
-
   &:hover
     border-bottom: 1px solid blue
   &:focus
     outline: none
     border-bottom: 1px solid dark-slate
-    color: dark-slate
+    color: white
+
+.near-me
+  border none
