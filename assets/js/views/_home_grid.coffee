@@ -12,10 +12,13 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @elBuffer.appendChild @energyTrends.render().el
         @elBuffer.appendChild $(templates.energy_fact())[0]
 
-      if index is 12
+      if index is 10
         @elBuffer.appendChild $(templates.family_size({size: parseFloat(@familySize)}))[0]
 
-      if index is 15
+      if index is 6
+        @elBuffer.appendChild $(templates.walk_score({size: parseFloat(@familySize)}))[0]
+
+      if index is 13
         @elBuffer.appendChild $(templates.old_homes({percent: @homesBuildBefore1900}))[0]
 
       if model.shouldShow()
