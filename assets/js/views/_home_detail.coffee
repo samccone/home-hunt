@@ -2,6 +2,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.HomeDetail extends Marionette.Layout
     template: templates.home_detail
     className: 'home-detail'
+    regions:
+      "homeScoreRegion": '.home-score-steps'
+
     ui:
       "map": '.home-location'
 
@@ -15,6 +18,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       $('html').addClass 'detail-view'
       @initialScroll = window.scrollY
       window.scroll(0, 0)
+      @homeScoreRegion.show new Views.HomeScorer({
+        model: new App.Models.HomeScore
+      })
 
     onClose: ->
       $('html').removeClass 'detail-view'
