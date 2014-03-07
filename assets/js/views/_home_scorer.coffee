@@ -8,5 +8,13 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     regions:
       stepRegion: '.current-step'
 
+    initialize: ->
+      App.vent.on 'advanceSection', =>
+        ++@step
+        @showSection()
+
     onShow: ->
-      @stepRegion.show new Views[@steps[@step]]
+      @showSection()
+
+    showSection: ->
+      @stepRegion.show new Views[@steps[@step]](model: @options.model)
