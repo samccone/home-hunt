@@ -17,9 +17,11 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
           city   = r[0].address_components[3+offset].long_name
           state  = r[0].address_components[5+offset].short_name
 
-          App.reqres.setHandler 'zip', -> zip
-          App.reqres.setHandler 'city', -> city
-          App.reqres.setHandler 'state', -> state
+          App.request('location').set({
+            'zip'   : zip
+            'city'  : city
+            'state' : state
+          })
 
           App.OverlayRegion.reset()
           App.AppRegion.show new App.Views.Grid

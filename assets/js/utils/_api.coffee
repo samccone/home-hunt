@@ -9,10 +9,10 @@ App.module "Utils", (Utils, App, Backbone, Marionette, $, _) ->
       $.getJSON("#{base}walk_score/home/#{lat}/#{lon}?callback=?")
 
     getHomes: ->
-      $.getJSON("#{base}homes/#{App.request('zip')}?callback=?")
+      $.getJSON("#{base}homes/#{App.request('location').get('zip')}?callback=?")
 
     getDemographics: ->
-      $.getJSON("#{base}demographics/#{App.request('zip')}?callback=?")
+      $.getJSON("#{base}demographics/#{App.request('location').get('zip')}?callback=?")
 
     getTrends: ->
-      $.getJSON("#{base}trends/#{App.request('state')}?callback=?")
+      $.getJSON("#{base}trends/#{App.request('location').get('state')}?callback=?")

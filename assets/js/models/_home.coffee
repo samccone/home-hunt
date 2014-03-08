@@ -35,7 +35,7 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
 
     getHESScore: ->
       $.post "#{App.Utils.API.HESScoreUrl()}", {
-        zip: App.request('zip')
+        zip: App.request('location').get('zip')
         inputs: @get('HES_Fields')
       }, (d) =>
         @set('HESResults', d)

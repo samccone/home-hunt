@@ -4,6 +4,10 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     ui:
       locateButton: ".near-me"
 
+    onShow: ->
+      $('.blue-header .background').css
+        'background-image':  "url(http://maps.googleapis.com/maps/api/staticmap?center=#{App.request('location').get('zip')}&zoom=9&size=650x150&scale=2&maptype=roadmap&sensor=false&style=hue:0x0091ff|visibility:on|weight:0.1)"
+
     events: ->
       "click @ui.locateButton": @locate
 
@@ -12,5 +16,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @ui.locateButton.hide()
 
     serializeData: ->
-      city: App.request('city')
-      state: App.request('state')
+      _.extend({}, App.request('location').attributes)
