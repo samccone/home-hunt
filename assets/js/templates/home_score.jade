@@ -16,44 +16,44 @@ table.price-breakdown
       td
         .small-block.fill-red
         | heating
-      td $3,020
-      td $3,020
-      td.red $784
+      td $#{HESResults.existingHome.Heating['$t']}
+      td $#{HESResults.withUpgrades.Heating['$t']}
+      td.red $#{HESResults.existingHome.Heating['$t'] - HESResults.withUpgrades.Heating['$t']}
     tr
       td
         .small-block.fill-blue
         | cooling
-      td $3,020
-      td $3,020
-      td.blue $1,245
+      td $#{HESResults.existingHome.Cooling['$t']}
+      td $#{HESResults.withUpgrades.Cooling['$t']}
+      td.blue $#{HESResults.existingHome.Cooling['$t'] - HESResults.withUpgrades.Cooling['$t']}
     tr
       td
         .small-block.fill-dark-slate
         | hot water
-      td $3,020
-      td $3,020
-      td.dark-slate $135
+      td $#{HESResults.existingHome.HotWater['$t']}
+      td $#{HESResults.withUpgrades.HotWater['$t']}
+      td.dark-slate $#{HESResults.existingHome.HotWater['$t'] - HESResults.withUpgrades.HotWater['$t']}
     tr
       td
         .small-block.fill-pink
         | small appliances
-      td $3,020
-      td $3,020
-      td.pink $124
+      td $#{HESResults.existingHome.SmallAppliances['$t']}
+      td $#{HESResults.withUpgrades.SmallAppliances['$t']}
+      td.pink $#{HESResults.existingHome.SmallAppliances['$t'] - HESResults.withUpgrades.SmallAppliances['$t']}
     tr
       td
         .small-block.fill-orange
         | large appliances
-      td $3,020
-      td $3,020
-      td.orange $422
+      td $#{HESResults.existingHome.LargeAppliances['$t']}
+      td $#{HESResults.withUpgrades.LargeAppliances['$t']}
+      td.orange $#{HESResults.existingHome.LargeAppliances['$t'] - HESResults.withUpgrades.LargeAppliances['$t']}
     tr
       td
         .small-block.fill-green
         | lighting
-      td $3,020
-      td $3,020
-      td.green $101
+      td $#{HESResults.existingHome.Lighting['$t']}
+      td $#{HESResults.withUpgrades.Lighting['$t']}
+      td.green $#{HESResults.existingHome.Lighting['$t'] - HESResults.withUpgrades.Lighting['$t']}
 
 
 .detail-footer
