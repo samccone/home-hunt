@@ -24,6 +24,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       App.execute 'showDetails', @model
 
     onShow: ->
+      @$('.lazy').show().lazyload()
       @$('input').on 'change', (e) =>
         f = new FileReader()
 

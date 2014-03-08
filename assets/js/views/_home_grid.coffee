@@ -31,6 +31,5 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         super
 
     onDomRefresh: ->
-      @$('.lazy').show().lazyload()
       @energyTrends?.triggerMethod('show')
 
