@@ -28,7 +28,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       if index is 13
         @elBuffer.appendChild $(templates.old_homes({percent: d.get('homesBuildBefore1900')}))[0]
 
-      if model.shouldShow()
+      if model.shouldShow?()
         super
 
     onDomRefresh: ->
