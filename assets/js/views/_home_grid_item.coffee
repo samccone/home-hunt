@@ -4,7 +4,8 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     className: 'tile third home'
     tagName: 'li'
     events: ->
-      "click": @getDetails
+      "click .overlay": @getDetails
+      "click .bottom-meta-info": @getDetails
 
     serializeData: ->
       _.extend {}, @model.attributes,
