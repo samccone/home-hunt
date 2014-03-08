@@ -32,3 +32,10 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
 
     getZillowId: ->
       @attributes[0]
+
+    getHESScore: ->
+      $.post "#{App.Utils.API.HESScoreUrl()}", {
+        zip: App.request('zip')
+        inputs: @get('HES_Fields')
+      }, (d) =>
+        @set('HESResults', d)

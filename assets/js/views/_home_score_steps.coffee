@@ -43,4 +43,18 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       serializeFields.call(@)
 
   class Views.Score extends Views.HomeScoreBase
-    template: templates.home_score
+    serializeData: ->
+      HESResults: @model.get('HESResults')
+
+    modelEvents: ->
+      "change:HESResults": @render
+      "change": -> console.log arguments
+
+    getTemplate: ->
+      if @model.get('HESResults')?
+        templates.home_score
+      else
+        templates.home_score_loading
+
+    onShow: ->
+      @model.getHESScore()
