@@ -2,10 +2,16 @@
   background-color: dark-slate
   padding: spacing-block-tiny*2 0
   margin-bottom: spacing-block-tiny*2
+  @media screen and (max-width: 500px)
+    padding-right spacing-block-tiny
+    padding-left spacing-block-tiny
 
 .search-location-header
   text-transform capitalize
   color white
+  @media screen and (max-width: 500px)
+    text-align center
+    display block
 
 .find-homes
   margin-left: 12px
@@ -19,15 +25,22 @@
     display: block
 
 .search-input
-  width 16%
+  display inline-block
   background-color transparent
   border: none
   font-size: 20px
   font-family: 'robotobold'
   color: blue
-  margin-right: .5%
+  margin-right: 3%
   padding-bottom: 2px
   margin-left: spacing-block-tiny - 4
+  @media screen and (max-width: 500px)
+    text-align center
+    width 100%
+    margin spacing-block-tiny
+
 
 .near-me
   border none
+  @media screen and (max-width: 500px)
+    width: 100%
