@@ -1,7 +1,6 @@
-pre= JSON.stringify(HESResults, null, 4)
 h1.score-results.roboto-thin
   | You could save&nbsp;
-  span.blue $1,846
+  span.blue $#{HESResults.existingHome.Total['$t'] - HESResults.withUpgrades.Total['$t']}
   |  a year.
 
 table.price-breakdown
