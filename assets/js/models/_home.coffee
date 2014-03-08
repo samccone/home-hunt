@@ -9,6 +9,9 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
       else
         @set 'details', d
 
+    getState: ->
+      @get('details').address.split(',')[2].split(" ")[1]
+
     getBed: ->
       @attributes[7][1]
 

@@ -16,4 +16,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @showSection()
 
     showSection: ->
-      @stepRegion.show new Views[@steps[@step]](model: @options.model)
+      @stepRegion.show new Views[@steps[@step]](model: @model)

@@ -1,6 +1,9 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.HomeScoreBase extends Marionette.ItemView
     className: 'home-score-segment'
+    serializeData: ->
+      address: @model.get('details').address
+
     events: ->
       "click .jump-section": @advance
 
@@ -9,6 +12,8 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
   class Views.HomeBasics extends Views.HomeScoreBase
     template: templates.home_basics
+    onRender: ->
+      @$('#state').val(@model.getState())
 
   class Views.EnergyPrices extends Views.HomeScoreBase
     template: templates.energy_prices

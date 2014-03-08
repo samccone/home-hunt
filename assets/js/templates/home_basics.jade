@@ -1,15 +1,16 @@
 h6 home basics
+- console.log(address)
 .home-score-col.fourth
   label address
-  input(name="address").fancy-input(value="12 Bayview Ave")
+  input(name="address").fancy-input(value=address.split(',')[0])
 
 .home-score-col.fourth
   label city
-  input(name="city").fancy-input(value="Providence")
+  input(name="city").fancy-input(value=address.split(',')[1])
 
 .home-score-col.fourth
   label state
-  select#state(name='stateCode').fancy-select
+  select.fancy-select#state(name='stateCode')
     option(value='0', selected='') -Select State-
       option(value='Al') Alabama
       option(value='AK') Alaska
@@ -30,7 +31,7 @@ h6 home basics
       option(value='KS') Kansas
       option(value='KY') Kentucky
       option(value='LA') Louisiana
-      option(value='ME', selected='') Maine
+      option(value='ME') Maine
       option(value='MD') Maryland
       option(value='MA') Massachusetts
       option(value='MI') Michigan

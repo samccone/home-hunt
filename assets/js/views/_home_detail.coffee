@@ -19,7 +19,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @initialScroll = window.scrollY
       window.scroll(0, 0)
       @homeScoreRegion.show new Views.HomeScorer({
-        model: new App.Models.HomeScore
+        model: @model
       })
 
     onClose: ->
