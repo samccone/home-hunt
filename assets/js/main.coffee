@@ -12,7 +12,7 @@ App.on 'initialize:after', ->
     'OverlayRegion' : '.app-overlay'
     'SearchRegion': '.search-container'
 
-  App.reqres.setHandler 'maxHomes', -> 20
+  App.reqres.setHandler 'maxHomes', -> 21
   App.Router = new Router(controller: new Controller)
   Backbone.history.start(pushState: true)
 
