@@ -14,10 +14,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
   class Views.HomeScoreBase extends Marionette.ItemView
     onShow: ->
-      @model.getHESScore()
       $scoreInputs = @$('.fancy-select,.fancy-input')
+
       $scoreInputs.on 'focus', ->
-        console.log $scoreInputs
         $scoreInputs.parent().removeClass('active-col')
         $(@).parent().addClass('active-col')
 
