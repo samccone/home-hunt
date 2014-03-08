@@ -15,6 +15,8 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       details: @model.get('details')
 
     onShow: ->
+      $(window).on 'keydown', (e) => @close() if e.keyCode is 27
+
       $('html').addClass 'detail-view'
       @initialScroll = window.scrollY
       window.scroll(0, 0)
@@ -23,6 +25,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       })
 
     onClose: ->
+      $(window).off 'keydown'
       $('html').removeClass 'detail-view'
       window.scroll(0, @initialScroll)
 
