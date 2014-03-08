@@ -55,7 +55,6 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     modelEvents: ->
       "change:HESResults": @render
-      "change": -> console.log arguments
 
     getTemplate: ->
       if @model.get('HESResults')?
