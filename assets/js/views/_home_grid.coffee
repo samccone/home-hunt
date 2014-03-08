@@ -9,6 +9,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     itemViewContainer: 'ul'
 
+    serializeData: ->
+      fullSet: @collection.length is App.request('maxHomes')
+
     addItemView: (model, view, index) ->
       d = @demographics
       if index is 3
