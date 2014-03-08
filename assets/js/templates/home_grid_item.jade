@@ -6,7 +6,10 @@
             .inner-box
         h4.square-ft-text #{homeSqFt} sq ft.
       .overlay
-      .home-photo.lazy(data-original=homeImage)
+      - if (preventLazyLoad)
+        .home-photo(style="background-image:url(#{homeImage})")
+      - else
+        .home-photo.lazy(data-original=homeImage)
     .monthly-summary
       - if (energyCost)
         .green-button-cost

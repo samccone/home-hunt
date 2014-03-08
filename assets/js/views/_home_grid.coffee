@@ -35,5 +35,6 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @elBuffer.appendChild $(templates.old_homes({percent: d.get('homesBuildBefore1900')}))[0]
 
       if model.shouldShow?()
+        model.set('preventLazyLoad', true) if index < 7
         super
 
