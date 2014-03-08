@@ -1,5 +1,9 @@
 .tile.fact
   min-height: 160px
+  @media screen and (max-width: 670px)
+    text-align center
+    img
+      float none !important
 
   .inner-tile-wrap
     background-color: yellow
@@ -12,9 +16,16 @@
 
   img
     width: 10%
+    @media screen and (max-width: 670px)
+      width 30%
+
 
   .fact-copy
     width: 80%
     margin-left: 3%
     font-size: 20px
     line-height: 25px
+    @media screen and (max-width: 670px)
+      width 100%
+      text-align center
+      margin-left 0
