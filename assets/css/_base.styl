@@ -67,11 +67,23 @@ p
   &:hover
     cursor pointer
 
+.btn-default
+  background-color slate
+  color white
+  border 1px solid darken(slate, 20%)
+  &:hover
+    color white
+    background-color lighten(slate, 5%)
+
+
 .btn-wire
   border: 1px solid slate;
   transition: all 100ms ease-in
   &:hover
     border-color: darken(slate, 20%)
+  &:active
+    background-color darken(slate, 10%)
+
 
 .btn-primary
   background-color blue
