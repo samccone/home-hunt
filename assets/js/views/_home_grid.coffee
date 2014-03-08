@@ -1,11 +1,13 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
-  class Views.HomeGrid extends Marionette.CollectionView
-    getEmptyView: -> Views.EmptyHomeGrid
-    tagName: 'ul'
+  class Views.HomeGrid extends Marionette.CompositeView
+    template: templates.home_grid
     getItemView: -> Views.HomeGridItem
+    getEmptyView: -> Views.EmptyHomeGrid
 
     initialize: ->
       @demographics = @options.demographics
+
+    itemViewContainer: 'ul'
 
     addItemView: (model, view, index) ->
       d = @demographics
@@ -16,6 +18,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @energyTrends = new Views.EnergyTrends
         @elBuffer.appendChild @energyTrends.render().el
         @elBuffer.appendChild $(templates.energy_fact())[0]
+        @_bufferedChildren.push(@energyTrends)
 
       if index is 6
         @elBuffer.appendChild new Views.WalkScore({
@@ -30,7 +33,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
       if model.shouldShow?()
         super
-
-    onDomRefresh: ->
-      @energyTrends?.triggerMethod('show')
 
