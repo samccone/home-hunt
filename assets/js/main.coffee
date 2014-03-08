@@ -1,3 +1,4 @@
+#=require _tracking
 #=require _application
 #=require _router
 #=require _controllers
