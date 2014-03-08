@@ -13,6 +13,14 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     @model.set 'HES_Fields', fields
 
   class Views.HomeScoreBase extends Marionette.ItemView
+    onShow: ->
+      @model.getHESScore()
+      $scoreInputs = @$('.fancy-select,.fancy-input')
+      $scoreInputs.on 'focus', ->
+        console.log $scoreInputs
+        $scoreInputs.parent().removeClass('active-col')
+        $(@).parent().addClass('active-col')
+
     className: 'home-score-segment'
     serializeData: ->
       address: @model.get('details').address
