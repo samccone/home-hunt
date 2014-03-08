@@ -20,6 +20,7 @@
       transform scale(1.5)
 
 
+
 .third
   width: 31%
   @media screen and (max-width: 768px)
@@ -102,13 +103,19 @@
 
 .green-button-drop
   position: relative
-  border: 1px dashed lighten(slate, 17%)
+  border: 1px dashed lighten(slate, 25%)
   text-align: center
-  font-style: italic
-  font-size: 11px
-  padding: (spacing-block-tiny + 12) 0
+  padding: (spacing-block-tiny + 8) 0
   color: lighten(slate, 10%)
   cursor: pointer
+  border-radius 3px
+  @media screen and (max-width: 500px)
+    display none
+
+  p
+    font-size 11px
+    font-style: italic
+
   input
     position: absolute
     top: 0
