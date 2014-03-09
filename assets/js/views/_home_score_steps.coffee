@@ -52,6 +52,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.Score extends Views.HomeScoreBase
     serializeData: ->
       HESResults: @model.get('HESResults')
+      energyBreakdown: if @model.get('HESResults')? then @model.getEnergyBreakdown() else null
 
     modelEvents: ->
       "change:HESResults": @render

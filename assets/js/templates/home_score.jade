@@ -3,6 +3,17 @@ h1.score-results.roboto-thin
   span.blue $#{HESResults.existingHome.Total['$t'] - HESResults.withUpgrades.Total['$t']}
   |  a year.
 
+svg.energy-graph(viewBox="0 0 600 300")
+  - max = 200
+  g
+    - for(i in energyBreakdown.original)
+      - p = energyBreakdown.original[i]
+      circle(cx=max, cy=146, r=p.percent * max, class=p.key)
+  g
+    - for(i in energyBreakdown.upgraded)
+      - p = energyBreakdown.upgraded[i]
+      circle(cx=max*2 + 50, cy=146, r=p.percent * max, class=p.key)
+
 table.price-breakdown
   thead
     tr

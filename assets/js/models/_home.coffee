@@ -9,6 +9,32 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
       else
         @set 'details', d
 
+    getEnergyBreakdown: ->
+      points    = ['Heating', 'Cooling', 'HotWater', 'SmallAppliances', 'LargeAppliances', 'Lighting']
+      hes       = @get('HESResults')
+      exisiting = []
+
+      original = _(points).map((v) -> {
+          percent : hes.existingHome[v]['$t'] / hes.existingHome.Total['$t']
+          key     : v
+        })
+        .sortBy((v) -> v.percent)
+        .reverse()
+        .valueOf()
+
+      upgraded = _(points).map((v) -> {
+          percent : hes.withUpgrades[v]['$t'] / hes.existingHome.Total['$t']
+          key     : v
+        })
+        .sortBy((v) -> v.percent)
+        .reverse()
+        .valueOf()
+
+      {
+        original: original
+        upgraded: upgraded
+      }
+
     getState: ->
       @get('details').address.split(',')[2].split(" ")[1]
 
