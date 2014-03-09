@@ -63,4 +63,8 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         templates.home_score_loading
 
     onShow: ->
+      @$(".cycle-slideshow").cycle
+        speed: 2000
+        slides: ".fact"
+
       @model.getHESScore()
