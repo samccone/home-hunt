@@ -9,3 +9,5 @@
 #=require 'vendor/_lazyload.js'
 #=require 'vendor/_d3.js'
 #=require 'vendor/_xml2json.js'
+#=require 'vendor/_jquery.cycle2.min.js'
+#=require 'vendor/_jquery.cycle2.autoheight.min.js'
