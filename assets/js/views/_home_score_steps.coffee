@@ -63,6 +63,12 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       else
         templates.home_score_loading
 
+    onRender: ->
+      @$(".cycle-slideshow").cycle('destroy')
+
+    onClose: ->
+      @$(".cycle-slideshow").cycle('destroy')
+
     onShow: ->
       @$(".cycle-slideshow").cycle
         speed: 2000
