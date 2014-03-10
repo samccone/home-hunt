@@ -4,15 +4,17 @@ h1.score-results.roboto-thin
   |  a year.
 
 svg.energy-graph(viewBox="0 0 600 300")
-  - max = 200
+  - max = 190
   g
     - for(i in energyBreakdown.original)
       - p = energyBreakdown.original[i]
-      circle(cx=max, cy=146, r=p.percent * max, class=p.key)
+      circle(cx=max+40, cy=146, r=p.percent * max, class=p.key)
+    text.current(y=20, x=500) current
   g
     - for(i in energyBreakdown.upgraded)
       - p = energyBreakdown.upgraded[i]
-      circle(cx=max*2 + 50, cy=146, r=p.percent * max, class=p.key)
+      circle(cx=max*2 + 50 +40, cy=146, r=p.percent * max, class=p.key)
+    text.current(y=20) potential
 
 table.price-breakdown
   thead
