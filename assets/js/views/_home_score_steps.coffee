@@ -70,8 +70,10 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @$(".cycle-slideshow").cycle('destroy')
 
     onShow: ->
-      @$(".bar-filled").addClass('fill-bar')
-      console.log 'test'
+      # have to defer this to prevent the application
+      # before insertion into the DOM
+      _.defer =>
+        @$(".bar-filled").addClass('fill-bar')
 
       @$(".cycle-slideshow").cycle
         speed: 2000
