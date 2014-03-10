@@ -36,7 +36,7 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
       }
 
     getState: ->
-      @get('details').address.split(',')[2].split(" ")[1]
+      @get('details').address.split(',')[2]?.split(" ")[1]
 
     getBed: ->
       @attributes[7][1]
