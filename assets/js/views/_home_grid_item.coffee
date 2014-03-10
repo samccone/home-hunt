@@ -17,8 +17,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     modelEvents: ->
       "change:energyCost": ->
-        @render()
-        @$('.lazy').lazyload()
+        @$('.monthly-summary').html templates.energy_cost(@serializeData())
 
     getDetails: ->
       App.execute 'showDetails', @model

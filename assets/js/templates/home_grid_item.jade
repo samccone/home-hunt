@@ -12,10 +12,7 @@
         .home-photo.lazy(data-original=homeImage)
     .monthly-summary
       - if (energyCost)
-        .green-button-cost
-          h5 electrical bill
-          .energy-cost
-            $#{energyCost} a month
+        != templates.energy_cost(locals)
       - else
         .green-button-drop
           p Drag Green Button data for monthly estimate
