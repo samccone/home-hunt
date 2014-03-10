@@ -70,8 +70,11 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @$(".cycle-slideshow").cycle('destroy')
 
     onShow: ->
+      @$(".bar-filled").addClass('fill-bar')
+      console.log 'test'
+
       @$(".cycle-slideshow").cycle
         speed: 2000
-        slides: ".fact"
+        slides: ".fact-item"
 
       @model.getHESScore()

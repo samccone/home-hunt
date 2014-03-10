@@ -116,3 +116,27 @@ label, .fancy-input, .fancy-select
     font-size 18px
     line-height 23px
 
+.progress-bar
+  margin spacing-block-sm 0
+  width 100%
+  position relative
+  border-bottom 1px solid lighten(slate, 90%)
+
+  .bar
+    position absolute
+    top 0
+    left 0
+    height 12px
+    border-radius 10px
+
+  .bar-filled
+    background-color blue
+    transition all 30s  ease-in
+    width 0
+
+  .fill-bar
+    width 100%
+
+  .bar-bounding
+    border 1px solid blue
+    width 100%
