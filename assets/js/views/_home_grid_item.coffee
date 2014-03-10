@@ -26,6 +26,10 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     onShow: ->
       @$('.lazy').show().lazyload()
       @$('input').on 'change', (e) =>
+        unless FileReader
+          alert "Your browser does not support this feature. Try in Chrome."
+          return
+
         f = new FileReader()
 
         f.onload = (e) =>
