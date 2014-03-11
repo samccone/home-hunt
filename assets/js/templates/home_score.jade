@@ -9,12 +9,12 @@ svg.energy-graph(viewBox="0 0 600 300")
     - for(i in energyBreakdown.original)
       - p = energyBreakdown.original[i]
       circle(cx=max+40, cy=146, r=p.percent * max, class=p.key)
-    text.current(y=20, x=500) current
+    text.current(y=20, x=500) potential
   g
     - for(i in energyBreakdown.upgraded)
       - p = energyBreakdown.upgraded[i]
       circle(cx=max*2 + 50 +40, cy=146, r=p.percent * max, class=p.key)
-    text.current(y=20) potential
+    text.current(y=20) current
 
 table.price-breakdown
   thead
